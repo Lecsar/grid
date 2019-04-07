@@ -1,0 +1,111 @@
+body {
+  background-color: #fafafa;
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    'hdr hdr hdr hdr hdr'
+    '. test test test .';
+  grid-template-rows: 77px auto;
+  grid-template-columns: 1fr repeat(3, 1.5fr) 1fr;
+  grid-row-gap: 20px;
+}
+
+.header {
+  background-color: white;
+  grid-area: hdr;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+  display: grid;
+  grid-template-areas: 'empty name search group epmty';
+  grid-template-columns: minmax(0, 200px) repeat(3, minmax(100px, 300px)) minmax(0, 200px);
+  grid-column-gap: 10px;
+  align-items: center;
+}
+
+.empty {
+  grid-area: empty;
+}
+
+.name {
+  margin: 0;
+  padding: 0;
+  grid-area: name;
+}
+
+.text {
+  grid-area: search;
+}
+
+.group {
+  display: grid;
+  grid-area: group;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: '. icon1 icon2 icon3';
+  grid-template-columns: minmax(0, 100px) 1fr 1fr 1fr;
+  grid-template-rows: 100%;
+  grid-column-gap: 5px;
+}
+
+#icon1 {
+  grid-area: icon1;
+}
+
+#icon2 {
+  grid-area: icon2;
+}
+
+#icon3 {
+  grid-area: icon3;
+}
+
+.icon {
+  grid-area: icon;
+  max-height: 30px;
+}
+
+.test {
+  grid-area: test;
+  display: grid;
+  grid-template-areas:
+    'avatr name approve subscribe arrow options'
+    'avatr . . . . .'
+    'avatr . . . . .';
+  grid-template-columns: 150px repeat(5, min-content);
+  align-items: center;
+  column-gap: 5px;
+}
+
+#avatar {
+  justify-self: center;
+  grid-area: avatr;
+  height: 150px;
+  border-radius: 50%;
+}
+
+#name {
+  margin-left: 50px;
+  grid-area: name;
+}
+
+#approve {
+  grid-area: approve;
+}
+
+#subscribe {
+  grid-area: subscribe;
+}
+
+#arrow {
+  grid-area: arrow;
+}
+
+#options {
+  grid-area: options;
+}
+
+.btn {
+  max-width: 100px;
+}
